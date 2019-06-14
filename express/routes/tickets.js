@@ -33,9 +33,9 @@ router.delete('/:name', (req, res)=> {
 // Create a route for getting ONE movie by it's id
 // This corresponds to item 4 in the controller
 router.get('/:id', (req, res)=> {
-    TicketsController.findOne(req.params.id)
-    .then(()=> {
-        res.json(id)
+    TicketsController.getById(req.params.id)
+    .then((movie)=> {
+        res.json(movie)
     })
 })
 
